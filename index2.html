@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Spectogram</title>
+    <link rel="icon" href="./res/web/favicon.png">
+    <!-- link rel="stylesheet" href="./res/web/styles.css"/ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            overflow: hidden;
+            display: block;
+        }
+        #settings-menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 3px solid rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+        .setting {
+            width: 100%;
+            display: flex;
+            margin: 5px;
+        }
+        label {
+            flex-shrink: 0;
+            width: 6em;
+        }
+        span {
+            margin: auto;
+            flex-shrink: 0;
+            width: 4.5em;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <canvas id="spectogram">
+            Javascript and support for canvas is required
+        </canvas>
+        <div id="settings-menu">
+            <!-- div class="setting">
+                <label>
+                    <input type="checkbox" id="setting1"> Setting 1
+                </label>
+            </div -->
+            <div class="setting">
+                <label for="tick-variant">Ticks</label>
+                <select id="tick-variant">
+                    <option value="none">None</option>
+                    <option value="preset" selected>Preset</option>
+                    <option value="notes">Notes</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label for="colormap">Colormap</label>
+                <select id="colormap">
+                    <option value="grayscale" selected>Grayscale</option>
+                    <option value="magma">Magma</option>
+                    <option value="inferno">Inferno</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label for="interpolation">Interpolation</label>
+                <select id="interpolation">
+                    <option value="nearest" selected>Nearest</option>
+                    <option value="linear">Linear</option>
+                    <option value="maximum">Maximum</option>
+                    <option value="averaging">Averaging</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label for="fft-size">FFT Size</label>
+                <select id="fft-size">
+                    <option value="1024">1024 Points</option>
+                    <option value="2048">2048 Points</option>
+                    <option value="4096" selected>4096 Points</option>
+                    <option value="8192">8192 Points</option>
+                    <option value="16384">16384 Points</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label for="smoothing-factor">FFT Smoothing</label>
+                <input type="range" id="smoothing-factor" min="0" max="1" value="0" step="0.01" style="width: 100%;">
+                <span id="smoothing-factor-value">0.00</span>
+            </div>
+            <div class="setting">
+                <label for="lower-frequency">Lower Frequency</label>
+                <input type="range" id="lower-frequency" min="0" max="1" value="0.11739" step="0.00001" style="width: 100%;">
+                <span id="lower-frequency-value">45 Hz</span>
+            </div>
+            <div class="setting">
+                <label for="upper-frequency">Upper Frequency</label>
+                <input type="range" id="upper-frequency" min="0" max="1" value="0.91345" step="0.00001" style="width: 100%;">
+                <span id="upper-frequency-value">11000 Hz</span>
+            </div>
+            <div class="setting">
+                <label for="scala">Interpolation</label>
+                <select id="scala">
+                    <option value="log" selected>Logarithmic</option>
+                    <option value="linear">Linear</option>
+                    <option value="mel">Mel</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label for="speed">Speed</label>
+                <input type="range" id="speed" min="0" max="10" value="5" step="1" style="width: 100%;">
+                <span></span>
+            </div>
+            <div class="setting">
+                <label for="volume">Volume</label>
+                <input type="range" id="volume" min="0" max="100" value="50" step="1" style="width: 100%;">
+                <span id="volume-value">50 %</span>
+            </div>
+        </div>
+    </div>
+    <script src="./index2.js"></script>
+</body>
+
+</html>

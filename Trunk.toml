@@ -1,0 +1,12 @@
+[build]
+target = "index.html"
+dist = "dist"
+public_url = "/"
+filehash = false
+# release = true
+# public_url = "./"
+
+[serve]
+# Open a browser tab once the initial build is complete.
+open = true
+address = "127.0.0.1"

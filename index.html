@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>WASM Spectogram</title>
+        <link data-trunk rel="copy-dir" href="./assets"/>
+        <link data-trunk rel="copy-file" href="./res/web/favicon.png">
+        <link rel="icon" href="./favicon.png">
+        <link data-trunk rel="inline" href="./res/web/styles.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="lds-dual-ring"></div>
+            <canvas id="spectogram">
+                Javascript and support for canvas is required
+            </canvas>
+        </div>
+        <link data-trunk rel="rust" href="Cargo.toml" data-wasm-opt="s" data-bin="wasm_spectogram"/>
+    </body>
+</html>
